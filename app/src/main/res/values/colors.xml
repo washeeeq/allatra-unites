@@ -4,4 +4,12 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhiteAlfa75">#BCFFFFFF</color>
+    <color name="colorWhiteAlfa50">#80FFFFFF</color>
+    <color name="colorWhiteAlfa30">#4DFFFFFF</color>
+    <color name="colorWhiteAlfa0">#00FFFFFF</color>
+    <color name="colorFormEdit">#CED5EA</color>
+    <color name="colorFormEditText">#9CA6C6</color>
+    <color name="colorAlertText">#FF1010</color>
 </resources>

@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.DisplayMetrics
 import android.widget.ImageView
-import ua.allatra.allatraunites.MainActivity
 import ua.allatra.allatraunites.R
 import ua.allatra.allatraunites.ui.util.ImageLoadHelper
 
@@ -38,7 +37,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler().postDelayed(
             {
-                startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+                startActivity(Intent(this@SplashScreenActivity, RegisterActivity::class.java))
                 // close this activity
                 finish()
             }, DELAY_SPLASH * 1000

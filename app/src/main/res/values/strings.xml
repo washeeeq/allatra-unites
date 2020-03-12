@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AllatraUnites</string>
+    <string name="text_thanks_to_download">Спасибо, что установили AllatRaUnites.  Это приложение направлено на объединение людей, которые поддерживают идею созидательного общества</string>
+    <string name="text_creative_society">Созидательное общество - это ... (в двух предложениях)</string>
+    <string name="text_add_your_email">Чтобы поддержать идею, пожалуйста, введите адрес своей почты</string>
+    <string name="text_add_your_name">Пожалуйста, введите Ваше имя и страну</string>
+    <string name="txt_hint_email">e-mail</string>
+    <string name="txt_hint_name">name</string>
+    <string name="txt_hint_country">country</string>
+    <string name="text_add_your_name_in_mother_lang">* Пожалуйста, введите Ваше имя на родном языке.</string>
 </resources>
