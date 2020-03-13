@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/rootLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,149 +14,236 @@
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/bckg_people_blur"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtThanksToDownload"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="24dp"
-        app:layout_constraintWidth_percent="0.7"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_thanks_to_download"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/horGuideLine"/>
-
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtCreativeSociety"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="24dp"
-        app:layout_constraintWidth_percent="0.7"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_creative_society"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtThanksToDownload"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtAddEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="32dp"
-        app:layout_constraintWidth_percent="0.7"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_creative_society"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCreativeSociety"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:background="@drawable/bg_edittext_form"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.06"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="@string/txt_hint_email"
-        android:layout_marginTop="12dp"
-        android:paddingLeft="12dp"
-        android:paddingStart="12dp"
-        android:textColor="@color/colorFormEditText"
-        android:textColorHint="@color/colorFormEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtAddEmail"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtAddName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="32dp"
-        app:layout_constraintWidth_percent="0.7"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_add_your_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmail"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.05" />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:background="@drawable/bg_edittext_form"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.06"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/txt_hint_name"
-        android:layout_marginTop="12dp"
-        android:paddingLeft="12dp"
-        android:paddingStart="12dp"
-        android:textColor="@color/colorFormEditText"
-        android:textColorHint="@color/colorFormEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtAddName"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2" />
 
-    <EditText
-        android:id="@+id/editTextCountry"
-        android:background="@drawable/bg_edittext_form"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.06"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/txt_hint_country"
-        android:layout_marginTop="14dp"
-        android:paddingLeft="12dp"
-        android:paddingStart="12dp"
-        android:textColor="@color/colorFormEditText"
-        android:textColorHint="@color/colorFormEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextName"/>
+            <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+                android:id="@+id/txtThanksToDownload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="8dp"
+                app:layout_constraintWidth_percent="0.7"
+                android:adjustViewBounds="true"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@string/text_thanks_to_download"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/horGuideLine"/>
 
-    <ua.allatra.allatraunites.ui.fonts.OpenSansItalicTextView
-        android:id="@+id/txtAddNameOnMotherLang"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorAlertText"
-        android:layout_marginTop="8dp"
-        app:layout_constraintWidth_percent="0.7"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:textSize="11dp"
-        android:gravity="center"
-        android:text="@string/text_add_your_name_in_mother_lang"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextCountry"/>
+            <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+                android:id="@+id/txtCreativeSociety"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="24dp"
+                app:layout_constraintWidth_percent="0.7"
+                android:adjustViewBounds="true"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@string/text_creative_society"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtThanksToDownload"/>
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+                android:id="@+id/txtAddEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="32dp"
+                app:layout_constraintWidth_percent="0.7"
+                android:adjustViewBounds="true"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@string/text_creative_society"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCreativeSociety"/>
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:background="@drawable/bg_edittext_form"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="0.06"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:hint="@string/txt_hint_email"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/colorFormEditText"
+                android:textColorHint="@color/colorFormEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAddEmail"/>
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+                android:id="@+id/txtAddName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="32dp"
+                app:layout_constraintWidth_percent="0.7"
+                android:adjustViewBounds="true"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@string/text_add_your_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextEmail"/>
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:background="@drawable/bg_edittext_form"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="0.06"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/txt_hint_name"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/colorFormEditText"
+                android:textColorHint="@color/colorFormEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAddName"/>
+
+            <EditText
+                android:id="@+id/editTextCountry"
+                android:background="@drawable/bg_edittext_form"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="0.06"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/txt_hint_country"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/colorFormEditText"
+                android:textColorHint="@color/colorFormEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"/>
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansItalicTextView
+                android:id="@+id/txtAddNameOnMotherLang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAlertText"
+                android:layout_marginTop="8dp"
+                app:layout_constraintWidth_percent="0.7"
+                android:adjustViewBounds="true"
+                android:textAlignment="center"
+                android:textSize="11dp"
+                android:gravity="center"
+                android:text="@string/text_add_your_name_in_mother_lang"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextCountry"/>
+
+            <ImageView
+                android:id="@+id/imgCheckBoxGdpr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="0.05"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_checkbox_form"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/verGuideLine"
+                app:layout_constraintTop_toBottomOf="@id/txtAddNameOnMotherLang" />
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+                android:id="@+id/txtGdprAgree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                app:layout_constraintWidth_percent="0.6"
+                android:adjustViewBounds="true"
+                android:textSize="12sp"
+                android:text="@string/text_i_give_consent"
+                app:layout_constraintStart_toEndOf="@id/imgCheckBoxGdpr"
+                app:layout_constraintTop_toBottomOf="@id/txtAddNameOnMotherLang"/>
+
+            <LinearLayout
+                android:id="@+id/GdprAgreeGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtGdprAgree">
+
+                <ImageButton
+                    android:id="@+id/imgBtnISupportIdea"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/vector_btn_agree_unticked" />
+
+                <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+                    android:id="@+id/txtISupportIdea"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:adjustViewBounds="true"
+                    android:textAlignment="textStart"
+                    android:gravity="start"
+                    android:text="@string/text_i_support_idea"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtCreativeSociety"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

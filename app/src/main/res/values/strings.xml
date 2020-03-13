@@ -8,4 +8,7 @@
     <string name="txt_hint_name">name</string>
     <string name="txt_hint_country">country</string>
     <string name="text_add_your_name_in_mother_lang">* Пожалуйста, введите Ваше имя на родном языке.</string>
+    <string name="text_i_give_consent">* Я принимаю соглашение о конфиденциальности и согласен на обработку моих персональных данных</string>
+    <string name="text_i_support_idea">Я поддерживаю идею созидательного общества</string>
+    <string name="text_please_agree_to_give_consent">Пожалуйста, примите соглашение о конфиденциальности</string>
 </resources>
