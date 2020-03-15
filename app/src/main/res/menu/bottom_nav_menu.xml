@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+        <item
+            android:id="@+id/ruLang"
+            android:title="RU"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/uaLang"
+            android:title="UA"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/csLang"
+            android:title="CS"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/esLang"
+            android:title="ES"
+            app:showAsAction="never"/>
+    </group>
+    <item
+        android:id="@+id/writeUs"
+        android:icon="@drawable/vector_pen_add"
+        android:title="write us"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/writeUs2"
+        android:icon="@drawable/vector_pen_add"
+        android:title="write us"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/csLang2"
+        android:title="CS"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/esLang2"
+        android:title="ES"
+        app:showAsAction="never"/>
+</menu>

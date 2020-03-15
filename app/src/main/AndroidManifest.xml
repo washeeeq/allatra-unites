@@ -15,8 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AllatRaUnitesTheme">
-        <activity android:name=".ui.activity.RegisterActivity"></activity>
-        <activity android:name=".ui.activity.SplashScreenActivity"
+        <activity
+            android:name=".ui.activity.StatisticalActivity"
+            android:theme="@style/AllatRaUnitesTheme" />
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity
+            android:name=".ui.activity.SplashScreenActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

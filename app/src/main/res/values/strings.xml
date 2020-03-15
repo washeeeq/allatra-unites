@@ -11,4 +11,14 @@
     <string name="text_i_give_consent">* Я принимаю соглашение о конфиденциальности и согласен на обработку моих персональных данных</string>
     <string name="text_i_support_idea">Я поддерживаю идею созидательного общества</string>
     <string name="text_please_agree_to_give_consent">Пожалуйста, примите соглашение о конфиденциальности</string>
+    <string name="text_thanks_for_joining">Спасибо, что Вы присоединились</string>
+    <string name="txt_en_lang">EN</string>
+
+    <string-array name="languages">
+        <item>EN</item>
+        <item>RU</item>
+        <item>UA</item>
+        <item>CS</item>
+        <item>ES</item>
+    </string-array>
 </resources>

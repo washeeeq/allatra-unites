@@ -12,4 +12,8 @@
     <color name="colorFormEdit">#CED5EA</color>
     <color name="colorFormEditText">#9CA6C6</color>
     <color name="colorAlertText">#FF1010</color>
+    <color name="colorThankText">#C8979AA6</color>
+    <color name="colorThankTextBlue">#203376</color>
+    <color name="colorMenuEndGradient">#F21F1F</color>
+    <color name="colorMenuStartGradient">#B90F0F</color>
 </resources>

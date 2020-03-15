@@ -1,12 +1,15 @@
 package ua.allatra.allatraunites.ui.activity
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_register.*
 import ua.allatra.allatraunites.R
@@ -18,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         setGdprTextColors()
+        setThankYouStyle()
 
         /**
          * GDPR check
@@ -36,13 +40,23 @@ class RegisterActivity : AppCompatActivity() {
 
         imgBtnISupportIdea?.setOnClickListener{
             //TODO: Add more checks on name, e-mail, address
-            if(!getIsGdprAgreed()){
+            if(!userGaveConsent()){
                 Log.e("RegisterActivity", "Please agree on GDPR!")
                 showConsentAgree()
             } else {
                 //TODO: Fire register rest api call
                 // youhuuu celebrate
                 it.background = resources.getDrawable(R.drawable.vector_btn_agree_ticked)
+                // wait here a bit
+                thankYouLayout.visibility = View.VISIBLE
+                //TODO: Add animation, https://github.com/glomadrian/Grav
+
+                Handler().postDelayed(
+                    {
+                        thankYouLayout.visibility = View.INVISIBLE
+                        startActivity(Intent(this@RegisterActivity, StatisticalActivity::class.java))
+                    }, 1 * 1000
+                ) // wait for 3 seconds
             }
         }
     }
@@ -56,9 +70,28 @@ class RegisterActivity : AppCompatActivity() {
         snackBar.show()
     }
 
-    fun getIsGdprAgreed(): Boolean = imgCheckBoxGdpr?.background != null
+    private fun userGaveConsent(): Boolean = imgCheckBoxGdpr?.background != null
 
-    fun setGdprTextColors(){
+    private fun setThankYouStyle(){
+        val language = "ru"
+        val text = resources.getText(R.string.text_thanks_for_joining)
+
+        val spannableString = SpannableString(text)
+        val redColor = ForegroundColorSpan(Color.RED)
+        val blueColor = ForegroundColorSpan(resources.getColor(R.color.colorThankTextBlue))
+
+        when(language){
+            "ru" -> {
+                spannableString.setSpan(redColor, 0,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannableString.setSpan(blueColor, 8,30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+            else -> {}
+        }
+
+        txtThanksForJoining?.text = spannableString
+    }
+
+    private fun setGdprTextColors(){
         val language = "ru"
         val text = resources.getText(R.string.text_i_give_consent)
         val spannableString = SpannableString(text)
