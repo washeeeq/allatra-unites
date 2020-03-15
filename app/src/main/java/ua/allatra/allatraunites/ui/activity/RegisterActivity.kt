@@ -15,10 +15,15 @@ import kotlinx.android.synthetic.main.activity_register.*
 import ua.allatra.allatraunites.R
 
 class RegisterActivity : AppCompatActivity() {
+    private var realWidth: Int? = null
+    private var realHeight: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        realHeight = intent.extras?.getInt(SplashScreenActivity.SCREEN_HEIGHT)
+        realWidth = intent.extras?.getInt(SplashScreenActivity.SCREEN_WIDTH)
 
         setGdprTextColors()
         setThankYouStyle()
@@ -54,11 +59,20 @@ class RegisterActivity : AppCompatActivity() {
                 Handler().postDelayed(
                     {
                         thankYouLayout.visibility = View.INVISIBLE
-                        startActivity(Intent(this@RegisterActivity, StatisticalActivity::class.java))
+                        startFollowingActivity()
                     }, 1 * 1000
                 ) // wait for 3 seconds
             }
         }
+    }
+
+    private fun startFollowingActivity(){
+        val intent = Intent(this@RegisterActivity, StatisticalActivity::class.java)
+        val bundle = Bundle()
+        bundle.putInt(SplashScreenActivity.SCREEN_HEIGHT, realHeight!!)
+        bundle.putInt(SplashScreenActivity.SCREEN_WIDTH, realWidth!!)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 
     private fun showConsentAgree(){
