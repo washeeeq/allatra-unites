@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/textLang"
         android:singleLine="true"
         android:layout_width="40dp"
@@ -10,9 +9,6 @@
         android:text="@string/txt_en_lang"
         android:textColor="@color/colorAlertText"
         android:background="@color/colorBlack"
-        android:src="@drawable/bitmap_spinner_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:src="@drawable/bitmap_spinner_arrow" />
 
 

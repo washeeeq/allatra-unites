@@ -27,7 +27,6 @@ import java.util.*
 class RegisterActivity : AppCompatActivity() {
     private var realWidth: Int? = null
     private var realHeight: Int? = null
-    private lateinit var realmHandler: RealmHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,38 +78,6 @@ class RegisterActivity : AppCompatActivity() {
                     }, 1 * 1000
                 ) // wait for 3 seconds
             }
-        }
-
-        realmHandler = RealmHandler(this)
-        val user = realmHandler.getUserDAO(DEFAULT_ID)
-
-        user?.let {
-            // setting user to
-            //setLocale(user.getLanguage())
-            setLocale(this,"ru")
-        }?:run{
-            val languageCode = Locale.getDefault().language
-            realmHandler.createUserDAO(languageCode)
-            Log.d("onCreate", "Locale is $languageCode, new user DAO created.")
-        }
-    }
-
-    private fun setLocale(context: Context, languageCode: String){
-        Log.d("setLocale", "Setting locale to: $languageCode")
-        // Change locale settings in the app.
-        // Change locale settings in the app.
-        val locale = Locale(languageCode)
-        Locale.setDefault(locale)
-
-        val dm: DisplayMetrics = resources.displayMetrics
-        val configuration: Configuration = resources.configuration
-
-        if (Build.VERSION.SDK_INT >= 17) {
-            configuration.setLocale(locale)
-            context.createConfigurationContext(configuration)
-        } else {
-            configuration.locale = locale
-            resources.updateConfiguration(configuration, dm)
         }
     }
 

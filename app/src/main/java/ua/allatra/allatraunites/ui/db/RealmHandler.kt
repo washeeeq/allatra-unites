@@ -48,7 +48,14 @@ class RealmHandler() {
         return realm.where<UserDAO>(UserDAO::class.java).equalTo("id", id).findFirst()
     }
 
-    fun createUserDAO(language: String){
+    fun updateUserDAO(language: String, userDAO: UserDAO){
+        realm.beginTransaction()
+        userDAO.setLanguage(language)
+        realm.copyToRealmOrUpdate(userDAO)
+        realm.commitTransaction()
+    }
+
+    fun createUserDAO(language: String): UserDAO{
         var userDAO = UserDAO()
         var lastId = realm.where<UserDAO>(UserDAO::class.java).max("id")
 
@@ -65,6 +72,8 @@ class RealmHandler() {
         realm.beginTransaction()
         realm.copyToRealmOrUpdate(userDAO)
         realm.commitTransaction()
+
+        return userDAO
     }
 
     private fun convertBitmapToByteArray(drawable: BitmapDrawable): ByteArray? {

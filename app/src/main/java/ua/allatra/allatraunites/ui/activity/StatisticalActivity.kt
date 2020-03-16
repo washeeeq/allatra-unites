@@ -1,10 +1,15 @@
 package ua.allatra.allatraunites.ui.activity
 
+import android.content.Context
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
@@ -19,11 +24,18 @@ import ua.allatra.allatraunites.R
 import ua.allatra.allatraunites.ui.activity.SplashScreenActivity.Companion.SCREEN_HEIGHT
 import ua.allatra.allatraunites.ui.activity.SplashScreenActivity.Companion.SCREEN_WIDTH
 import ua.allatra.allatraunites.ui.adapter.PersonAdapter
+import ua.allatra.allatraunites.ui.db.RealmHandler
+import ua.allatra.allatraunites.ui.db.UserDAO
 import ua.allatra.allatraunites.ui.fonts.CustomTypefaceSpan
 import ua.allatra.allatraunites.ui.util.ImageLoadHelper
+import java.util.*
 
 
 class StatisticalActivity : AppCompatActivity() {
+
+    private lateinit var realmHandler: RealmHandler
+    private var user: UserDAO? = null
+    private var isInitiated: Boolean = false
 
     companion object {
         private const val NUMBER_OF_PEOPLE = 158999
@@ -51,9 +63,9 @@ class StatisticalActivity : AppCompatActivity() {
             showMessage("Activity 9th May not implemented yet!")
         }
 
-        val adapterChar = ArrayAdapter.createFromResource(this, R.array.languages, R.layout.custom_spinner_text)
-        adapterChar.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-        spinnerLanguages.adapter = adapterChar
+//        val adapterChar = ArrayAdapter.createFromResource(this, R.array.languages, R.layout.custom_spinner_dropdown)
+//        adapterChar.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+//        spinnerLanguages.adapter = adapterChar
 
         spinnerLanguages.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(
@@ -63,15 +75,26 @@ class StatisticalActivity : AppCompatActivity() {
                 l: Long
             ) {
                 val selectedLanguage: String = spinnerLanguages.getItemAtPosition(position).toString()
-                Log.d("onCreate", "Clicked: $position,selectedLanguage, $selectedLanguage")
-                //TODO: language switching
+                Log.d("onCreate", "Clicked: $position, selectedLanguage, $selectedLanguage")
+
+                //TODO: does not work for 0 position
+                if(isInitiated){
+                    Log.d("onCreate", "User changed his preferred language.")
+                    user?.let {
+                        if(it.getLanguage().compareTo(selectedLanguage.toLowerCase())!=0) {
+                            realmHandler.updateUserDAO(selectedLanguage.toLowerCase(), it)
+
+                            finish()
+                            startActivity(intent)
+                        }
+                    }
+                }
+
+                isInitiated = true
             }
 
             override fun onNothingSelected(adapterView: AdapterView<*>?) {}
         }
-
-        setTextStyleNumberOfPeopleSupported()
-        setTextStyleNumberOfPeopleSupportedToday()
 
         screenHeight?.let { height ->
             imgPlanetEarth?.setImageBitmap(ImageLoadHelper.decodeSampledBitmapFromResource(resources, R.drawable.bg_planet_earth, screenWidth!!, height))
@@ -79,6 +102,9 @@ class StatisticalActivity : AppCompatActivity() {
             Log.e("onCreate", "height was not passed correctly")
         }
 
+        /**
+         * API call, TODO
+         */
         listOfPeople?.let {
             it.layoutManager = LinearLayoutManager(this)
             val arrayList = mutableListOf<String>()
@@ -95,16 +121,42 @@ class StatisticalActivity : AppCompatActivity() {
             it.adapter = PersonAdapter(arrayList)
         }
 
-        val adapter = ArrayAdapter(
-            this,
-            R.layout.custom_spinner_dropdown,
-            resources.getStringArray(R.array.languages)
-        )
-        //adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown)
-        spinnerLanguages?.adapter = adapter
+        realmHandler = RealmHandler(this)
+        user = realmHandler.getUserDAO(RealmHandler.DEFAULT_ID)
+
+        if(user == null){
+            val languageCode = Locale.getDefault().language
+            user = realmHandler.createUserDAO(languageCode)
+            Log.d("onCreate", "Locale is $languageCode, new user DAO created.")
+        }
+
+        user?.let {
+            val lang = it.getLanguage()
+            Log.d("onCreate", "Locale is set to $lang.")
+            setAllTextComponentsPerUserLocale(lang)
+            setTextStyleNumberOfPeopleSupported(getLocalizedResources(lang))
+            setTextStyleNumberOfPeopleSupportedToday(getLocalizedResources(lang))
+        }?:run{
+            Log.e("onCreate", "User is null, check for previous errors.")
+        }
     }
 
-    private fun setTextStyleNumberOfPeopleSupported(){
+    private fun setAllTextComponentsPerUserLocale(languageCode: String){
+        txtAmongThem?.text = getLocalizedResources(languageCode).getString(R.string.text_among_them)
+        btnRegisterShowNext?.text = getLocalizedResources(languageCode).getString(R.string.text_sign_up_for_conference_and_show_previous)
+    }
+
+    private fun getLocalizedResources(
+        languageCode: String
+    ): Resources {
+        val conf = resources.configuration
+        conf.locale = Locale(languageCode)
+        val metrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(metrics)
+        return Resources(assets, metrics, conf)
+    }
+
+    private fun setTextStyleNumberOfPeopleSupported(resources: Resources){
         //TODO: Language and api call to get numbers
         val text_part1 = resources.getText(R.string.text_number_of_people_supported_1)
         val text_part2 = resources.getText(R.string.text_number_of_people_supported_2)
@@ -123,7 +175,7 @@ class StatisticalActivity : AppCompatActivity() {
         txtNumberOfPeopleSupp?.text = spannableString
     }
 
-    private fun setTextStyleNumberOfPeopleSupportedToday(){
+    private fun setTextStyleNumberOfPeopleSupportedToday(resources: Resources){
         //TODO: Language and api call to get numbers
         val text_part1 = resources.getText(R.string.text_number_of_people_supported_today_1)
         val text_part2 = resources.getText(R.string.text_number_of_people_supported_today_2)
