@@ -2,13 +2,14 @@ package ua.allatra.allatraunites.ui.activity
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.DisplayMetrics
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 import ua.allatra.allatraunites.R
-import ua.allatra.allatraunites.ui.util.ImageLoadHelper
+
 
 class SplashScreenActivity : AppCompatActivity() {
     private var realWidth: Int? = null
@@ -26,8 +27,10 @@ class SplashScreenActivity : AppCompatActivity() {
 
         setScreenMetrics()
 
-        val backgroundImgView = findViewById<ImageView>(R.id.imgSplashBackground)
-        backgroundImgView.setImageBitmap(ImageLoadHelper.decodeSampledBitmapFromResource(resources, R.drawable.bckg_people, realWidth!!, realHeight!!))
+        Picasso
+            .get()
+            .load(R.drawable.bg_people)
+            .into(imgSplashBackground)
 
         Handler().postDelayed(
             {
@@ -53,5 +56,9 @@ class SplashScreenActivity : AppCompatActivity() {
             realWidth = windowManager.defaultDisplay.width
             realHeight = windowManager.defaultDisplay.height
         }
+    }
+
+    fun getImage(imageName: String?): Int {
+        return resources.getIdentifier(imageName, "drawable", packageName)
     }
 }

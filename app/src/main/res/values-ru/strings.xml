@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">AllatraUnites</string>
+    <string name="text_thanks_to_download">Спасибо, что установили AllatRaUnites.  Это приложение направлено на объединение людей, которые поддерживают идею созидательного общества</string>
+    <string name="text_creative_society">Созидательное общество - это ... (в двух предложениях)</string>
+    <string name="text_add_your_email">Чтобы поддержать идею, пожалуйста, введите адрес своей почты</string>
+    <string name="text_add_your_name">Пожалуйста, введите Ваше имя и страну</string>
+    <string name="txt_hint_email">e-mail</string>
+    <string name="txt_hint_name">name</string>
+    <string name="txt_hint_country">country</string>
+    <string name="text_add_your_name_in_mother_lang">* Пожалуйста, введите Ваше имя на родном языке.</string>
+    <string name="text_i_give_consent">* Я принимаю соглашение о конфиденциальности и согласен на обработку моих персональных данных</string>
+    <string name="text_i_support_idea">Я поддерживаю идею созидательного общества</string>
+    <string name="text_please_agree_to_give_consent">Пожалуйста, примите соглашение о конфиденциальности</string>
+    <string name="text_thanks_for_joining">Спасибо, что Вы присоединились</string>
+    <string name="text_number_of_people_supported_1">Идею созидательного общества уже поддержали</string>
+    <string name="text_number_of_people_supported_2">людей из</string>
+    <string name="text_number_of_people_supported_3">стран мира</string>
+    <string name="text_number_of_people_supported_today_1">Сегодня идею созидательного общества поддержали</string>
+    <string name="text_number_of_people_supported_today_2">человек из</string>
+    <string name="text_number_of_people_supported_today_3">стран мира</string>
+    <string name="text_among_them">Среди которых:</string>
+    <string name="text_sign_up_for_conference_and_show_previous">Зарегистрироваться на международную конференцию 09 мая 2020</string>
+    <string name="txt_en_lang">EN</string>
+
+    <string-array name="languages">
+        <item>EN</item>
+        <item>RU</item>
+        <item>UA</item>
+        <item>CS</item>
+        <item>ES</item>
+    </string-array>
+</resources>

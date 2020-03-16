@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
     <!--Toolbar-->
     <include
@@ -91,7 +92,6 @@
             android:id="@+id/myImageView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/vector_circle_people"
             android:background="@color/colorWhiteAlfa0"
             android:adjustViewBounds="true"/>
 

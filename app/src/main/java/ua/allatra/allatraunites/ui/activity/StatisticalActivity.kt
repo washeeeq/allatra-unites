@@ -22,6 +22,7 @@ import ua.allatra.allatraunites.ui.adapter.PersonAdapter
 import ua.allatra.allatraunites.ui.fonts.CustomTypefaceSpan
 import ua.allatra.allatraunites.ui.util.ImageLoadHelper
 
+
 class StatisticalActivity : AppCompatActivity() {
 
     companion object {
@@ -93,6 +94,14 @@ class StatisticalActivity : AppCompatActivity() {
 
             it.adapter = PersonAdapter(arrayList)
         }
+
+        val adapter = ArrayAdapter(
+            this,
+            R.layout.custom_spinner_dropdown,
+            resources.getStringArray(R.array.languages)
+        )
+        //adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown)
+        spinnerLanguages?.adapter = adapter
     }
 
     private fun setTextStyleNumberOfPeopleSupported(){
