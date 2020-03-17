@@ -16,6 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AllatRaUnitesTheme">
         <activity
+            android:name=".ui.activity.NinthMayActivity"
+            android:label="@string/title_activity_ninth_may"
+            android:theme="@style/AllatRaUnitesTheme"></activity>
+        <activity
             android:name=".ui.activity.StatisticalActivity"
             android:theme="@style/AllatRaUnitesTheme" />
         <activity android:name=".ui.activity.RegisterActivity" />

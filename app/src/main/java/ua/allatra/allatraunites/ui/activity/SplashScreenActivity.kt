@@ -40,8 +40,8 @@ class SplashScreenActivity : AppCompatActivity() {
         val user = realmHandler.getUserDAO(RealmHandler.DEFAULT_ID)
 
         user?.let {
-            //intentNew = Intent(this@SplashScreenActivity, StatisticalActivity::class.java)
-            intentNew = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
+            intentNew = Intent(this@SplashScreenActivity, StatisticalActivity::class.java)
+//            intentNew = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
         }?:run{
             intentNew = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
         }
