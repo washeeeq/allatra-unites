@@ -63,9 +63,9 @@ class StatisticalActivity : AppCompatActivity() {
             showMessage("Activity 9th May not implemented yet!")
         }
 
-//        val adapterChar = ArrayAdapter.createFromResource(this, R.array.languages, R.layout.custom_spinner_dropdown)
-//        adapterChar.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-//        spinnerLanguages.adapter = adapterChar
+        val adapterChar = ArrayAdapter.createFromResource(this, R.array.languages, R.layout.custom_spinner_textview)
+        adapterChar.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+        spinnerLanguages.adapter = adapterChar
 
         spinnerLanguages.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(
