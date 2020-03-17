@@ -2,6 +2,7 @@ package ua.allatra.allatraunites.ui.activity
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
 import android.text.SpannableString
@@ -9,16 +10,21 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_register.*
 import ua.allatra.allatraunites.R
-
+import ua.allatra.allatraunites.ui.fonts.CustomTypefaceSpan
 
 class RegisterActivity : AppCompatActivity() {
     private var realWidth: Int? = null
     private var realHeight: Int? = null
+
+    companion object {
+        private const val DELAY_SHOW_THANK_YOU = 2L
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +57,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         imgBtnISupportIdea?.setOnClickListener{
+            it as ImageView
             //TODO: Add more checks on name, e-mail, address
             if(!userGaveConsent()){
                 Log.e("RegisterActivity", "Please agree on GDPR!")
@@ -58,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 //TODO: Fire register rest api call
                 // youhuuu celebrate
-                it.background = resources.getDrawable(R.drawable.vector_btn_agree_ticked)
+                it.setImageDrawable(resources.getDrawable(R.drawable.vector_btn_agree_ticked))
                 // wait here a bit
                 thankYouLayout?.visibility = View.VISIBLE
                 //TODO: Add animation, https://github.com/glomadrian/Grav
@@ -67,7 +74,7 @@ class RegisterActivity : AppCompatActivity() {
                     {
                         thankYouLayout.visibility = View.INVISIBLE
                         startFollowingActivity()
-                    }, 1 * 1000
+                    }, DELAY_SHOW_THANK_YOU * 1000
                 ) // wait for 3 seconds
             }
         }
@@ -95,26 +102,20 @@ class RegisterActivity : AppCompatActivity() {
     private fun userGaveConsent(): Boolean = imgCheckBoxGdpr?.background != null
 
     private fun setThankYouStyle(){
-        val language = "en"
-        val text = resources.getText(R.string.text_thanks_for_joining)
+        val textThanks1 = resources.getText(R.string.text_thanks_for_supporting_1)
+        val textThanks2 = resources.getText(R.string.text_thanks_for_supporting_2)
+        val fontBold = Typeface.createFromAsset(assets, "OpenSans-Bold.ttf")
+        val fontSemiBold = Typeface.createFromAsset(assets, "OpenSans-SemiBold.ttf")
 
-        val spannableString = SpannableString(text)
-        val redColor = ForegroundColorSpan(Color.RED)
-        val blueColor = ForegroundColorSpan(resources.getColor(R.color.colorThankTextBlue))
+        val spannableString1 = SpannableString(textThanks1)
+        val spannableString2 = SpannableString(textThanks2)
 
-        when(language){
-            "ru" -> {
-                spannableString.setSpan(redColor, 0,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                spannableString.setSpan(blueColor, 8,30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-            }
-            "en" -> {
-                spannableString.setSpan(redColor, 0,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                spannableString.setSpan(blueColor, 8,27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-            }
-            else -> {}
-        }
+        spannableString1.setSpan(CustomTypefaceSpan(fontBold, resources.getColor(R.color.colorAlertText)), 0, textThanks1.count()-1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableString1.setSpan(CustomTypefaceSpan(fontSemiBold, resources.getColor(R.color.colorThankTextBlue)), textThanks1.count()-1, textThanks1.count(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txtThanksForJoining1?.text = spannableString1
 
-        txtThanksForJoining?.text = spannableString
+        spannableString2.setSpan(CustomTypefaceSpan(fontSemiBold, resources.getColor(R.color.colorThankTextBlue)), 0, textThanks2.count(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txtThanksForJoining2?.text = spannableString2
     }
 
     private fun setGdprTextColors(){

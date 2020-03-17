@@ -11,7 +11,8 @@
     <string name="text_i_give_consent">* Přijímám dohodu o mlčenlivosti a souhlasím se zpracováním mých osobních údajů </string>
     <string name="text_i_support_idea">Podporuji myšlenku kreativní společnosti</string>
     <string name="text_please_agree_to_give_consent">Přijměte prosím dohodu o ochraně osobních údajů</string>
-    <string name="text_thanks_for_joining">Děkujeme, že jste se připojili</string>
+    <string name="text_thanks_for_supporting_1">Děkujeme,</string>
+    <string name="text_thanks_for_supporting_2"> že jste se připojili</string>
     <string name="text_number_of_people_supported_1">Myšlenka kreativní společnosti již byla podporována</string>
     <string name="text_number_of_people_supported_2">lidmi z</string>
     <string name="text_number_of_people_supported_3">země světa</string>

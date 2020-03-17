@@ -4,6 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_statistical_horizontal_margin">20dp</dimen>
     <dimen name="activity_statistical_horizontal_margin_half">10dp</dimen>
-    <dimen name="radius_corner">2dp</dimen>
-    <dimen name="elevation">2dp</dimen>
+    <dimen name="radius_corner">3dp</dimen>
+    <dimen name="elevation">3dp</dimen>
 </resources>

@@ -11,7 +11,8 @@
     <string name="text_i_give_consent">* I accept the confidentiality agreement and agree to the processing of my personal data</string>
     <string name="text_i_support_idea">I support the idea of ​​a creative society</string>
     <string name="text_please_agree_to_give_consent">Please accept the privacy agreement</string>
-    <string name="text_thanks_for_joining">Thank you for supporting us</string>
+    <string name="text_thanks_for_supporting_1">Thank you,</string>
+    <string name="text_thanks_for_supporting_2">for supporting us</string>
     <string name="text_number_of_people_supported_1">The idea of ​​a creative society has already been supported by</string>
     <string name="text_number_of_people_supported_2">people from</string>
     <string name="text_number_of_people_supported_3">different countries of the world</string>

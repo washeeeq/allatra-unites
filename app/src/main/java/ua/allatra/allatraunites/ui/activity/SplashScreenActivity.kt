@@ -9,11 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 import ua.allatra.allatraunites.R
-
+import ua.allatra.allatraunites.db.RealmHandler
 
 class SplashScreenActivity : AppCompatActivity() {
     private var realWidth: Int? = null
     private var realHeight: Int? = null
+    private lateinit var realmHandler: RealmHandler
+    private lateinit var intentNew: Intent
 
     companion object {
         private const val DELAY_SPLASH = 2L
@@ -27,19 +29,30 @@ class SplashScreenActivity : AppCompatActivity() {
 
         setScreenMetrics()
 
-        Picasso
-            .get()
-            .load(R.drawable.bg_people)
-            .into(imgSplashBackground)
+        imgSplashBackground?.let {
+            Picasso
+                .get()
+                .load(R.drawable.bg_people)
+                .into(it)
+        }
+
+        realmHandler = RealmHandler(this)
+        val user = realmHandler.getUserDAO(RealmHandler.DEFAULT_ID)
+
+        user?.let {
+            //intentNew = Intent(this@SplashScreenActivity, StatisticalActivity::class.java)
+            intentNew = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
+        }?:run{
+            intentNew = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
+        }
 
         Handler().postDelayed(
             {
-                val intent = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
                 val bundle = Bundle()
                 bundle.putInt(SCREEN_HEIGHT, realHeight!!)
                 bundle.putInt(SCREEN_WIDTH, realWidth!!)
-                intent.putExtras(bundle)
-                startActivity(intent)
+                intentNew.putExtras(bundle)
+                startActivity(intentNew)
                 // close this activity
                 finish()
             }, DELAY_SPLASH * 1000

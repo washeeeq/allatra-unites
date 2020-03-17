@@ -11,7 +11,8 @@
     <string name="text_i_give_consent">* Я принимаю соглашение о конфиденциальности и согласен на обработку моих персональных данных</string>
     <string name="text_i_support_idea">Я поддерживаю идею созидательного общества</string>
     <string name="text_please_agree_to_give_consent">Пожалуйста, примите соглашение о конфиденциальности</string>
-    <string name="text_thanks_for_joining">Спасибо, что Вы присоединились</string>
+    <string name="text_thanks_for_supporting_1">Спасибо,</string>
+    <string name="text_thanks_for_supporting_2"> что Вы присоединились</string>
     <string name="text_number_of_people_supported_1">Идею созидательного общества уже поддержали</string>
     <string name="text_number_of_people_supported_2">людей из</string>
     <string name="text_number_of_people_supported_3">стран мира</string>
