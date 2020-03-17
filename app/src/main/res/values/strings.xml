@@ -20,6 +20,7 @@
     <string name="text_number_of_people_supported_today_2">people from</string>
     <string name="text_number_of_people_supported_today_3">different countries of the world</string>
     <string name="text_among_them">Among which:</string>
+    <string name="text_sign_up">Sign up</string>
     <string name="text_sign_up_for_conference_and_show_previous">Register for the international conference09 May 2021</string>
     <string name="txt_en_lang">EN</string>
 
@@ -30,4 +31,7 @@
         <item>CS</item>
         <item>ES</item>
     </string-array>
+    <string name="title_activity_ninth_may">NinthMayActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

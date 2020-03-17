@@ -1,5 +1,6 @@
 package ua.allatra.allatraunites.ui.activity
 
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.Typeface
@@ -56,7 +57,7 @@ class StatisticalActivity : AppCompatActivity() {
          * 9th May
          */
         btnRegisterShowNext?.setOnClickListener {
-            showMessage("Activity 9th May not implemented yet!")
+            startFollowingActivity()
         }
 
         val adapterChar = ArrayAdapter.createFromResource(this, R.array.languages, R.layout.custom_spinner_textview)
@@ -139,6 +140,11 @@ class StatisticalActivity : AppCompatActivity() {
         }?:run{
             Log.e("onCreate", "User is null, check for previous errors.")
         }
+    }
+
+    private fun startFollowingActivity(){
+        val intent = Intent(this@StatisticalActivity, NinthMayActivity::class.java)
+        startActivity(intent)
     }
 
     private fun getPositionOfLanguage(languageCode: String): Int{
