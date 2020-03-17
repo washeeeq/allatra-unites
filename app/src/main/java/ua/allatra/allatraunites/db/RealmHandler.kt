@@ -1,4 +1,4 @@
-package ua.allatra.allatraunites.ui.db
+package ua.allatra.allatraunites.db
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -45,7 +45,8 @@ class RealmHandler() {
     }
 
     fun getUserDAO(id: Long): UserDAO?{
-        return realm.where<UserDAO>(UserDAO::class.java).equalTo("id", id).findFirst()
+        return realm.where<UserDAO>(
+            UserDAO::class.java).equalTo("id", id).findFirst()
     }
 
     fun updateUserDAO(language: String, userDAO: UserDAO){
@@ -55,9 +56,10 @@ class RealmHandler() {
         realm.commitTransaction()
     }
 
-    fun createUserDAO(language: String): UserDAO{
+    fun createUserDAO(language: String): UserDAO {
         var userDAO = UserDAO()
-        var lastId = realm.where<UserDAO>(UserDAO::class.java).max("id")
+        var lastId = realm.where<UserDAO>(
+            UserDAO::class.java).max("id")
 
         lastId?.let {
             val newId = lastId.toInt() + 1

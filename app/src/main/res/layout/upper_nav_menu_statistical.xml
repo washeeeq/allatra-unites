@@ -25,6 +25,10 @@
         <ImageView
             android:layout_gravity="end|center_vertical"
             android:contentDescription="@null"
+            android:paddingLeft="2dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingStart="2dp"
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:src="@drawable/bitmap_spinner_arrow"

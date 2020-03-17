@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">AllatraUnites</string>
+    <string name="text_thanks_to_download">Děkujeme za instalaci AllatRaUnites. Cílem této aplikace je spojit lidi, kteří podporují myšlenku kreativní společnosti</string>
+    <string name="text_creative_society">Kreativní společnost je ... (ve dvou větách)</string>
+    <string name="text_add_your_email">Chcete-li podpořit tento nápad, zadejte svou e-mailovou adresu</string>
+    <string name="text_add_your_name">Zadejte prosím své jméno a zemi</string>
+    <string name="txt_hint_email">e-mail</string>
+    <string name="txt_hint_name">jmeno</string>
+    <string name="txt_hint_country">zeme</string>
+    <string name="text_add_your_name_in_mother_lang">* Zadejte prosím své jméno ve vašem rodném jazyce.</string>
+    <string name="text_i_give_consent">* Přijímám dohodu o mlčenlivosti a souhlasím se zpracováním mých osobních údajů </string>
+    <string name="text_i_support_idea">Podporuji myšlenku kreativní společnosti</string>
+    <string name="text_please_agree_to_give_consent">Přijměte prosím dohodu o ochraně osobních údajů</string>
+    <string name="text_thanks_for_joining">Děkujeme, že jste se připojili</string>
+    <string name="text_number_of_people_supported_1">Myšlenka kreativní společnosti již byla podporována</string>
+    <string name="text_number_of_people_supported_2">lidmi z</string>
+    <string name="text_number_of_people_supported_3">země světa</string>
+    <string name="text_number_of_people_supported_today_1">Dnes byla myšlenka kreativní společnosti podporována</string>
+    <string name="text_number_of_people_supported_today_2">lidmi z</string>
+    <string name="text_number_of_people_supported_today_3">země světa</string>
+    <string name="text_among_them">Mezi nimi:</string>
+    <string name="text_sign_up_for_conference_and_show_previous">Zaregistrovat se na mezinárodní konferenci 9. Května 2021</string>
+    <string name="txt_en_lang">EN</string>
+</resources>

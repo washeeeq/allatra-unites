@@ -19,14 +19,6 @@
     <string name="text_number_of_people_supported_today_2">человек из</string>
     <string name="text_number_of_people_supported_today_3">стран мира</string>
     <string name="text_among_them">Среди которых:</string>
-    <string name="text_sign_up_for_conference_and_show_previous">Зарегистрироваться на международную конференцию 09 мая 2020</string>
+    <string name="text_sign_up_for_conference_and_show_previous">Зарегистрироваться на международную конференцию 09 мая 2021</string>
     <string name="txt_en_lang">EN</string>
-
-    <string-array name="languages">
-        <item>EN</item>
-        <item>RU</item>
-        <item>UA</item>
-        <item>CS</item>
-        <item>ES</item>
-    </string-array>
 </resources>

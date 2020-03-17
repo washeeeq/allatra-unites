@@ -1,11 +1,8 @@
 package ua.allatra.allatraunites.ui.activity
 
-import android.content.Context
-import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.Typeface
-import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -18,18 +15,18 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 import kotlinx.android.synthetic.main.activity_statistical.*
 import kotlinx.android.synthetic.main.upper_nav_menu_statistical.*
 import ua.allatra.allatraunites.R
 import ua.allatra.allatraunites.ui.activity.SplashScreenActivity.Companion.SCREEN_HEIGHT
 import ua.allatra.allatraunites.ui.activity.SplashScreenActivity.Companion.SCREEN_WIDTH
 import ua.allatra.allatraunites.ui.adapter.PersonAdapter
-import ua.allatra.allatraunites.ui.db.RealmHandler
-import ua.allatra.allatraunites.ui.db.UserDAO
+import ua.allatra.allatraunites.db.RealmHandler
+import ua.allatra.allatraunites.db.UserDAO
 import ua.allatra.allatraunites.ui.fonts.CustomTypefaceSpan
-import ua.allatra.allatraunites.ui.util.ImageLoadHelper
 import java.util.*
-
 
 class StatisticalActivity : AppCompatActivity() {
 
@@ -77,7 +74,6 @@ class StatisticalActivity : AppCompatActivity() {
                 val selectedLanguage: String = spinnerLanguages.getItemAtPosition(position).toString()
                 Log.d("onCreate", "Clicked: $position, selectedLanguage, $selectedLanguage")
 
-                //TODO: does not work for 0 position
                 if(isInitiated){
                     Log.d("onCreate", "User changed his preferred language.")
                     user?.let {
@@ -96,8 +92,11 @@ class StatisticalActivity : AppCompatActivity() {
             override fun onNothingSelected(adapterView: AdapterView<*>?) {}
         }
 
-        screenHeight?.let { height ->
-            imgPlanetEarth?.setImageBitmap(ImageLoadHelper.decodeSampledBitmapFromResource(resources, R.drawable.bg_planet_earth, screenWidth!!, height))
+        screenHeight?.let {
+            Picasso
+                .get()
+                .load(R.drawable.bg_planet_earth)
+                .into(imgPlanetEarth)
         }?: kotlin.run {
             Log.e("onCreate", "height was not passed correctly")
         }
@@ -136,8 +135,21 @@ class StatisticalActivity : AppCompatActivity() {
             setAllTextComponentsPerUserLocale(lang)
             setTextStyleNumberOfPeopleSupported(getLocalizedResources(lang))
             setTextStyleNumberOfPeopleSupportedToday(getLocalizedResources(lang))
+            // set selection
+            spinnerLanguages.setSelection(getPositionOfLanguage(lang))
         }?:run{
             Log.e("onCreate", "User is null, check for previous errors.")
+        }
+    }
+
+    private fun getPositionOfLanguage(languageCode: String): Int{
+        return when(languageCode){
+            "en" -> 0
+            "ru" -> 1
+            "ua" -> 2
+            "cs" -> 3
+            "es" -> 4
+            else -> 0
         }
     }
 

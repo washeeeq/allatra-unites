@@ -1,4 +1,4 @@
-package ua.allatra.allatraunites.ui.db
+package ua.allatra.allatraunites.db
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

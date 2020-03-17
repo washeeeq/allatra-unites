@@ -82,6 +82,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <RelativeLayout
+        android:id="@+id/groupInAfrica"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.04"
@@ -93,6 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/colorWhiteAlfa0"
+            android:src="@drawable/bitmap_circle_number"
             android:adjustViewBounds="true"/>
 
         <TextView
@@ -153,7 +155,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ua.allatra.allatraunites.ui.view.ShadowRecyclerView
         android:id="@+id/listOfPeople"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -162,8 +164,7 @@
         android:background="@drawable/bg_list_form"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLine4">
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine4"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horGuideLine5"

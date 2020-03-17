@@ -16,4 +16,5 @@
     <color name="colorThankTextBlue">#203376</color>
     <color name="colorMenuEndGradient">#F21F1F</color>
     <color name="colorMenuStartGradient">#B90F0F</color>
+    <color name="colorShadowView">#C8979AA6</color>
 </resources>

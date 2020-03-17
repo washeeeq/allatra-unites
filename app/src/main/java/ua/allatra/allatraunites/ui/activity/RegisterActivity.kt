@@ -1,27 +1,19 @@
 package ua.allatra.allatraunites.ui.activity
 
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_splash_screen.*
 import ua.allatra.allatraunites.R
-import ua.allatra.allatraunites.ui.db.RealmHandler
-import ua.allatra.allatraunites.ui.db.RealmHandler.Companion.DEFAULT_ID
-import java.util.*
 
 
 class RegisterActivity : AppCompatActivity() {
