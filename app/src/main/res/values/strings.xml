@@ -23,7 +23,11 @@
     <string name="text_sign_up">Sign up</string>
     <string name="text_sign_up_for_conference_and_show_previous">Register for the international conference09 May 2021</string>
     <string name="txt_en_lang">EN</string>
-
+    <string name="text_realities_of_our_times_1">The realities of our time: military threats and conflicts, geopolitical tensions, millions of refugees, children dying of hunger, economic crises - all this against the backdrop of rapidly growing climatic disasters that pose humanity with a key choice between the survival or death of civilization.</string>
+    <string name="text_realities_of_our_times_2">And this is all the result of the consumer format of society. Are we dreaming of such a world? Is such a future we want for our children and grandchildren? Is this the world in which we ourselves want to live?</string>
+    <string name="text_people_have_chance_1">BUT HUMANITY HAS A CHANCE</string>
+    <string name="text_people_have_chance_2">A unique world-wide event “SOCIETY. LAST CHANCE ”on May 9, 2020, on the platform of the ALLATRA International Public Movement, will unite people from 180 countries of the world in one online teleconference in an open global dialogue:</string>
+    <string name="text_people_have_chance_3">“Do we want a constructive society?”</string>
     <string-array name="languages">
         <item>EN</item>
         <item>RU</item>
@@ -31,7 +35,4 @@
         <item>CS</item>
         <item>ES</item>
     </string-array>
-    <string name="title_activity_ninth_may">NinthMayActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
 </resources>
