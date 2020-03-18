@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/groupCircles"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/horGuideLine4">
+
+    <ImageView
+        android:id="@+id/imgCircleSlideOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bitmap_circle_nav_empty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/groupCircles"
+        app:layout_constraintWidth_percent="0.03" />
+
+    <ImageView
+        android:id="@+id/imgCircleSlideTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bitmap_circle_nav_full"
+        app:layout_constraintStart_toEndOf="@+id/imgCircleSlideOne"
+        app:layout_constraintTop_toTopOf="@+id/imgCircleSlideOne"
+        app:layout_constraintWidth_percent="0.03" />
+
+    <ImageView
+        android:id="@+id/imgCircleSlideThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bitmap_circle_nav_empty"
+        app:layout_constraintStart_toEndOf="@+id/imgCircleSlideTwo"
+        app:layout_constraintTop_toTopOf="@+id/imgCircleSlideTwo"
+        app:layout_constraintWidth_percent="0.03" />
+
+    <ImageView
+        android:id="@+id/imgCircleSlideFour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bitmap_circle_nav_empty"
+        app:layout_constraintStart_toEndOf="@+id/imgCircleSlideThree"
+        app:layout_constraintTop_toTopOf="@+id/imgCircleSlideThree"
+        app:layout_constraintWidth_percent="0.03" />
+
+    <ImageView
+        android:id="@+id/imgCircleSlideFive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bitmap_circle_nav_empty"
+        app:layout_constraintStart_toEndOf="@+id/imgCircleSlideFour"
+        app:layout_constraintTop_toTopOf="@+id/imgCircleSlideFour"
+        app:layout_constraintWidth_percent="0.03" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
