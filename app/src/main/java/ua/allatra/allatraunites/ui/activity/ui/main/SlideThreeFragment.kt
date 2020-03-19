@@ -1,5 +1,6 @@
 package ua.allatra.allatraunites.ui.activity.ui.main
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
