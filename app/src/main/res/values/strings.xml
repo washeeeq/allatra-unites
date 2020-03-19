@@ -33,6 +33,10 @@
     <string name="text_photos">Photos</string>
     <string name="text_see_all">See All</string>
     <string name="text_how_it_was">MAY 11, \n2019.\n\nHow it was</string>
+    <string name="text_third_saturday_1">Hundreds of thousands of people will participate in this world event</string>
+    <string name="text_third_saturday_2">on the third Saturday of May 2021</string>
+    <string name="text_third_saturday_3">including diplomats, leaders of various international and non-profit organizations, politicians, scientists, representatives of the media, culture and socially active people from different countries. Interactive video broadcast in real time with simultaneous translation into different languages ​​of the world will allow a lively dialogue between people from different continents.</string>
+    <string name="text_third_saturday_4">At this historic international video conference, thousands of people from all over the world will have the opportunity to come together and share their opinions and visions of what the future of our society should be like.</string>
     <string-array name="languages">
         <item>EN</item>
         <item>RU</item>

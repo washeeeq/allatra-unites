@@ -1,21 +1,26 @@
 package ua.allatra.allatraunites.ui.activity.ui.main
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import ua.allatra.allatraunites.R
+import ua.allatra.allatraunites.ui.fonts.CustomTypefaceSpan
 import java.util.*
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class SlideOneFragment : Fragment() {
+class SlideOneFragment(private val languageCode: String) : Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
 
@@ -37,12 +42,11 @@ class SlideOneFragment : Fragment() {
         val mWebView3 = root.findViewById<WebView>(R.id.webViewBottomLeft)
         val mWebView4 = root.findViewById<WebView>(R.id.webViewBottomRight)
 
-        setFutureIsNowVideos(mWebView1, mWebView2, mWebView3, mWebView4)
+        val txtThirdSaturday = root.findViewById<TextView>(R.id.txtThirdSaturday);
 
-//        val textView: TextView = root.findViewById(R.id.section_label)
-//        pageViewModel.text.observe(this, Observer<String> {
-//            textView.text = it
-//        })
+        setFutureIsNowVideos(mWebView1, mWebView2, mWebView3, mWebView4)
+        setTextStyleThirdSaturdayOfMay(txtThirdSaturday)
+
         return root
     }
 
@@ -92,6 +96,26 @@ class SlideOneFragment : Fragment() {
         }
     }
 
+    private fun setTextStyleThirdSaturdayOfMay(txtThirdSaturday: TextView) {
+        val text_part1 = resources.getText(R.string.text_third_saturday_1)
+        val text_part2 = resources.getText(R.string.text_third_saturday_2)
+        val text_part3 = resources.getText(R.string.text_third_saturday_3)
+        val text_part4 = resources.getText(R.string.text_third_saturday_4)
+
+        val fontBold = Typeface.createFromAsset(resources.assets, "OpenSans-Bold.ttf")
+
+        val partOne = "$text_part1"
+        val partTwo = "$partOne $text_part2"
+        val partThree = "$partTwo $text_part3\n\n"
+        val partFour = "$partThree $text_part4"
+
+        val spannableString = SpannableString(partFour)
+        spannableString.setSpan(CustomTypefaceSpan(fontBold, resources.getColor(R.color.colorBlack)), text_part1.count() + 1, partTwo.count(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(CustomTypefaceSpan(fontBold, resources.getColor(R.color.colorBlack)), partThree.count() + 1, partFour.count(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        txtThirdSaturday.text = spannableString
+    }
+
     companion object {
         /**
          * The fragment argument representing the section number for this
@@ -118,8 +142,8 @@ class SlideOneFragment : Fragment() {
          * number.
          */
         @JvmStatic
-        fun newInstance(sectionNumber: Int): SlideOneFragment {
-            return SlideOneFragment().apply {
+        fun newInstance(sectionNumber: Int, languageCode: String): SlideOneFragment {
+            return SlideOneFragment(languageCode).apply {
                 arguments = Bundle().apply {
                     putInt(ARG_SECTION_NUMBER, sectionNumber)
                 }
