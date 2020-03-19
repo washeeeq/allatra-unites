@@ -1,185 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootLayout"
-    android:layout_width="match_parent"
+    android:fillViewport="true"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    android:layout_width="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLine1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08" />
-
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtNumberOfPeopleSupp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.7"
-        app:layout_constraintHeight_percent="0.1"
-        android:textColor="@color/colorBlack"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_number_of_people_supported_1"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="12sp"
-        app:autoSizeMaxTextSize="16sp"
-        app:autoSizeStepGranularity="1sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLine1"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLine2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
-
-    <ImageView
-        android:id="@+id/imgPlanetEarth"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.32"
-        android:src="@drawable/bg_planet_earth"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLine2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLine3"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        android:background="@color/colorWhite">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLineAfrica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verGuideLineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.075" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/verGuideLineAfrica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verGuideLineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.925" />
 
-    <RelativeLayout
-        android:id="@+id/groupInAfrica"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.04"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLineAfrica"
-        app:layout_constraintStart_toStartOf="@id/verGuideLineAfrica">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verGuideLineInnerStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verGuideLineInnerEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horGuideLineBeforeCollage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horGuideLineBeforeCollageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04" />
 
         <ImageView
-            android:id="@+id/myImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhiteAlfa0"
-            android:src="@drawable/bitmap_circle_number"
-            android:adjustViewBounds="true"/>
+            android:id="@+id/imgFutureIsNowCollage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.236"
+            android:src="@drawable/bg_future_is_now_collage"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintTop_toBottomOf="@id/horGuideLineBeforeCollage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="Future Is Now collage" />
 
-        <TextView
-            android:id="@+id/myImageViewText"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="1dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="100"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/groupSocietyLastChance"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.22"
+            app:layout_constraintTop_toBottomOf="@id/horGuideLineBeforeCollageText"
+            app:layout_constraintStart_toStartOf="@id/verGuideLineInnerStart"
+            app:layout_constraintEnd_toEndOf="@id/verGuideLineInnerEnd">
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansBoldTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="ОБЩЕСТВО"
+                android:textColor="#F00"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/groupSocietyLastChance" />
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansBoldTextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="ПОСЛЕДНИЙ ШАНС"
+                android:textColor="@color/colorThankTextBlue"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansBoldTextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="15 МАЯ 2021"
+                android:textColor="@color/colorThankTextBlue"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansBoldTextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:gravity="center_horizontal"
+                android:text="КАЖДЫЙ В ОТВЕТЕ ЗА БУДУЩЕЕ ЧЕЛОВЕЧЕСТВА"
+                android:textAlignment="center"
+                android:textColor="@color/colorThankTextBlue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <ua.allatra.allatraunites.ui.fonts.OpenSansBoldTextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="КАКИМ ОНО БУДЕТ?"
+                android:textColor="#F00"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+            android:id="@+id/txtNumberOfPeopleSupp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.12"
+            android:textColor="@color/colorBlack"
+            android:adjustViewBounds="true"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/text_9th_may_about_main"
             app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="9sp"
-            app:autoSizeMaxTextSize="10sp"
-            android:textColor="@color/colorWhite" />
-    </RelativeLayout>
+            app:autoSizeMinTextSize="16sp"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+            app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+            app:layout_constraintTop_toBottomOf="@id/imgFutureIsNowCollage"/>
 
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtNumberOfPeopleSuppToday"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintWidth_percent="0.7"
-        android:textColor="@color/colorBlack"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="12sp"
-        app:autoSizeMaxTextSize="16sp"
-        app:autoSizeStepGranularity="1sp"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_number_of_people_supported_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLine3"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horGuideLine6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
 
-    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
-        android:id="@+id/txtAmongThem"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.7"
-        app:layout_constraintHeight_percent="0.03"
-        android:textColor="@color/colorBlack"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="12sp"
-        app:autoSizeMaxTextSize="16sp"
-        app:autoSizeStepGranularity="1sp"
-        android:adjustViewBounds="true"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="@string/text_among_them"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtNumberOfPeopleSuppToday"/>
+        <TableLayout
+            android:id="@+id/videos"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+            app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.178"
+            app:layout_constraintTop_toBottomOf="@id/txtNumberOfPeopleSupp"
+            android:layout_centerInParent="true"
+            android:stretchColumns="*" >
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLine4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1" >
 
-    <ua.allatra.allatraunites.ui.view.ShadowRecyclerView
-        android:id="@+id/listOfPeople"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintHeight_percent="0.2"
-        android:background="@drawable/bg_list_form"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLine4"/>
+                <WebView
+                    android:id="@+id/webViewTopLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#FFF000"
+                    android:layout_column="0" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horGuideLine5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+                <WebView
+                    android:id="@+id/webViewTopRight"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#FFF000"
+                    android:layout_column="1" />
+            </TableRow>
 
-    <Button
-        android:id="@+id/btnRegisterShowNext"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintHeight_percent="0.093"
-        android:padding="6dp"
-        android:textColor="@color/colorWhite"
-        android:text="@string/text_sign_up_for_conference_and_show_previous"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="12sp"
-        app:autoSizeMaxTextSize="16sp"
-        app:autoSizeStepGranularity="1sp"
-        android:background="@drawable/bg_button_red_gradient"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horGuideLine5"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1" >
+
+                <WebView
+                    android:id="@+id/webViewBottomLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#FFF000"
+                    android:layout_column="0" />
+
+                <WebView
+                    android:id="@+id/webViewBottomRight"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#FFF000"
+                    android:layout_column="1" />
+            </TableRow>
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/imgAfterVideos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/bitmap_society_last_chance"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintTop_toBottomOf="@id/videos"
+            app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+            app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+            android:contentDescription="Society The Last Change" />
+
+        <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+            android:id="@+id/txtThirdSaturday"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.24"
+            android:textColor="@color/colorBlack"
+            android:adjustViewBounds="true"
+            android:textAlignment="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="14sp"
+            app:autoSizeMaxTextSize="16sp"
+            app:autoSizeStepGranularity="1sp"
+            android:gravity="center"
+            android:text="В этом всемирном событии"
+            app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+            app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+            app:layout_constraintTop_toBottomOf="@id/imgAfterVideos"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
