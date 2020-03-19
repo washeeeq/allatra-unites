@@ -22,6 +22,7 @@
     <string name="text_among_them">Among which:</string>
     <string name="text_sign_up">Sign up</string>
     <string name="text_sign_up_for_conference_and_show_previous">Register for the international conference09 May 2021</string>
+    <string name="text_9th_may_about_main">Creative changes begin with the decision of people, and this decision becomes the beginning of the future!\n\nA large-scale teleconference on May 9, 2020 is organized by people themselves on their own in their countries and regions!</string>
     <string name="txt_en_lang">EN</string>
 
     <string-array name="languages">
@@ -31,7 +32,4 @@
         <item>CS</item>
         <item>ES</item>
     </string-array>
-    <string name="title_activity_ninth_may">NinthMayActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
 </resources>
