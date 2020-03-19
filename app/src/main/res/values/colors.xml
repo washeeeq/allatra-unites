@@ -18,4 +18,5 @@
     <color name="colorMenuStartGradient">#B90F0F</color>
     <color name="colorShadowView">#C8979AA6</color>
     <color name="colorBackgroundChance">#F7F8FB</color>
+    <color name="colorFrameDanilovBorder">#F7F8FB</color>
 </resources>

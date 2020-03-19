@@ -21,6 +21,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager, pr
             0 -> SlideOneFragment.newInstance(position + 1)
             1 -> SlideTwoFragment.newInstance(position + 1)
             2 -> SlideThreeFragment.newInstance(position + 1, languageCode)
+            3 -> SlideFourFragment.newInstance(position + 1, languageCode)
 
             else -> {
                 Log.e("getItem", "unmapped position of fragment $position")
@@ -35,6 +36,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager, pr
 
     override fun getCount(): Int {
         // Show 2 total pages.
-        return 3
+        return 4
     }
 }

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayoutSlideTwo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verGuideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verGuideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.925" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verGuideLineStartInner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verGuideLineEndInner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.875" />
+
+    <ImageView
+        android:id="@+id/imgFrameBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_frame_form"
+        app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+        app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine4"
+        app:layout_constraintBottom_toBottomOf="@id/horGuideLine5"/>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imgDanilov"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:civ_border_color="@color/colorFrameDanilovBorder"
+        app:civ_border_width="10dp"
+        android:src="@drawable/bitmap_im_danilov"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine3" />
+
+    <ua.allatra.allatraunites.ui.fonts.OpenSansBoldTextView
+        android:id="@+id/txtInternationalConference"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintWidth_percent="0.85"
+        android:textColor="@color/colorBlack"
+        android:adjustViewBounds="true"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="17sp"
+        app:autoSizeStepGranularity="1sp"
+        android:text="@string/text_international_conference"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine1"/>
+
+    <ua.allatra.allatraunites.ui.fonts.OpenSansBoldItalicTextView
+        android:id="@+id/txtWeWouldLiveInCreativeSociety"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/colorBlack"
+        android:adjustViewBounds="true"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="11sp"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeStepGranularity="1sp"
+        android:text="@string/text_we_live_in_creative_soc"
+        app:layout_constraintStart_toStartOf="@id/verGuideLineStartInner"
+        app:layout_constraintEnd_toEndOf="@id/verGuideLineEndInner"
+        app:layout_constraintTop_toBottomOf="@id/imgDanilov"
+        app:layout_constraintBottom_toBottomOf="@id/horGuideLine6"/>
+
+    <ua.allatra.allatraunites.ui.fonts.OpenSansItalicTextView
+        android:id="@+id/txtImDanilov"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/colorBlack"
+        android:adjustViewBounds="true"
+        android:textAlignment="textEnd"
+        android:gravity="end"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="11sp"
+        app:autoSizeMaxTextSize="17sp"
+        app:autoSizeStepGranularity="1sp"
+        android:text="@string/text_im_danilov"
+        app:layout_constraintStart_toStartOf="@id/verGuideLineStartInner"
+        app:layout_constraintEnd_toEndOf="@id/verGuideLineEndInner"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine6"
+        app:layout_constraintBottom_toBottomOf="@id/horGuideLine5"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

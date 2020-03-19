@@ -32,6 +32,9 @@
     <string name="text_photos">Photos</string>
     <string name="text_see_all">See All</string>
     <string name="text_how_it_was">MAY 11, \n2019.\n\nHow it was</string>
+    <string name="text_international_conference">International conference \n"SOCIETY. LAST CHANCE" \nMay 9, 2020.\nUnite and create!</string>
+    <string name="text_we_live_in_creative_soc">“We would already live in a constructive society today if we had begun to act yesterday. And yesterday they would start acting if the day before yesterday they started talking about him. ”</string>
+    <string name="text_im_danilov">I. M. Danilov</string>
     <string-array name="languages">
         <item>EN</item>
         <item>RU</item>
