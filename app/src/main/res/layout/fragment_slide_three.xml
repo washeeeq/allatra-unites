@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayoutSlideTwo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <WebView
+        android:id="@+id/videoViewConference"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        app:layout_constraintWidth_percent="0.85"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+        android:id="@+id/txtRealities1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintWidth_percent="0.85"
+        android:textColor="@color/colorBlack"
+        android:adjustViewBounds="true"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="7sp"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeStepGranularity="1sp"
+        android:text="@string/text_may_2019_conference"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verGuideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verGuideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.925" />
+
+    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+        android:id="@+id/txtPhotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:textSize="22sp"
+        android:text="@string/text_photos"
+        app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+        app:layout_constraintBottom_toBottomOf="@id/horGuideLine3"/>
+
+    <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+        android:id="@+id/txtSeeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAlertText"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:textSize="17sp"
+        android:text="@string/text_see_all"
+        app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+        app:layout_constraintBottom_toBottomOf="@id/horGuideLine3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horGuideLine4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupPics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="@id/verGuideLineEnd"
+        app:layout_constraintStart_toStartOf="@id/verGuideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/horGuideLine4">
+
+        <ImageView
+            android:id="@+id/imgMay1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="1" />
+
+        <ua.allatra.allatraunites.ui.fonts.OpenSansRegularTextView
+            android:id="@+id/txtHowItWas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="textStart"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:gravity="start"
+            android:textSize="16sp"
+            android:text="@string/text_how_it_was"
+            app:layout_constraintStart_toStartOf="@id/imgMay1"
+            app:layout_constraintTop_toTopOf="@id/imgMay1"
+            app:layout_constraintBottom_toBottomOf="@id/imgMay1"/>
+
+        <ImageView
+            android:id="@+id/imgMay2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_2"
+            app:layout_constraintStart_toEndOf="@id/imgMay1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_3"
+            app:layout_constraintBottom_toBottomOf="@id/imgMay1"
+            app:layout_constraintStart_toEndOf="@id/imgMay1"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_4"
+            app:layout_constraintBottom_toBottomOf="@id/imgMay1"
+            app:layout_constraintStart_toEndOf="@id/imgMay3"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_5"
+            app:layout_constraintEnd_toStartOf="@+id/imgMay6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgMay1"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_6"
+            app:layout_constraintEnd_toStartOf="@+id/imgMay7"
+            app:layout_constraintStart_toEndOf="@id/imgMay5"
+            app:layout_constraintTop_toBottomOf="@id/imgMay1"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_7"
+            app:layout_constraintEnd_toStartOf="@+id/imgMay8"
+            app:layout_constraintStart_toEndOf="@id/imgMay6"
+            app:layout_constraintTop_toBottomOf="@id/imgMay1"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_8"
+            app:layout_constraintEnd_toStartOf="@+id/imgMay9"
+            app:layout_constraintStart_toEndOf="@id/imgMay7"
+            app:layout_constraintTop_toBottomOf="@id/imgMay1"
+            app:layout_constraintWidth_percent="1" />
+
+        <ImageView
+            android:id="@+id/imgMay9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bitmap_may_ninth_9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgMay1"
+            app:layout_constraintWidth_percent="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ua.allatra.allatraunites">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,7 +18,7 @@
         android:theme="@style/AllatRaUnitesTheme">
         <activity
             android:name=".ui.activity.NinthMayActivity"
-            android:theme="@style/AllatRaUnitesTheme"></activity>
+            android:theme="@style/AllatRaUnitesTheme" />
         <activity
             android:name=".ui.activity.StatisticalActivity"
             android:theme="@style/AllatRaUnitesTheme" />
@@ -32,5 +33,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
